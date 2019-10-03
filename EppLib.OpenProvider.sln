@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29324.140
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EppLib.OpenProvider", "EppLib.OpenProvider\EppLib.OpenProvider.csproj", "{0CA9C052-DD59-44D4-8D8C-FA995FC09092}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EppLib.OpenProvider.ImplTests", "EppLib.OpenProvider.ImplTests\EppLib.OpenProvider.ImplTests.csproj", "{C5AB562B-A2D5-41B6-97BA-41A96583D5A5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0CA9C052-DD59-44D4-8D8C-FA995FC09092}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0CA9C052-DD59-44D4-8D8C-FA995FC09092}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0CA9C052-DD59-44D4-8D8C-FA995FC09092}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0CA9C052-DD59-44D4-8D8C-FA995FC09092}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5AB562B-A2D5-41B6-97BA-41A96583D5A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5AB562B-A2D5-41B6-97BA-41A96583D5A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5AB562B-A2D5-41B6-97BA-41A96583D5A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5AB562B-A2D5-41B6-97BA-41A96583D5A5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BAEB2A32-8CB5-4527-9D73-F876B6C78705}
+	EndGlobalSection
+EndGlobal
