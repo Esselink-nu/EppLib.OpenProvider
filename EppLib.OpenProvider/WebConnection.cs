@@ -22,7 +22,7 @@ namespace EppLib.OpenProvider
         /// </summary>
         private string _resultBuffer;
 
-        private readonly TraceSource _traceSource = new TraceSource("EppLib");
+        public TraceSource TraceSource { get; set; } = new TraceSource("EppLib");
 
         public WebConnection(string host, int port, string schema = "https", int readTimeout = Timeout.Infinite)
         {
@@ -39,7 +39,7 @@ namespace EppLib.OpenProvider
                 ? _host.Replace("http://", string.Empty)
                 : _host;
 
-            _traceSource.TraceInformation($"Set connection to: {_schema}://{_host}:{_port}");
+            TraceSource.TraceInformation($"Set connection to: {_schema}://{_host}:{_port}");
         }
 
         public void Connect(SslProtocols sslProtocols = SslProtocols.Tls12)
@@ -50,12 +50,12 @@ namespace EppLib.OpenProvider
                 Timeout = TimeSpan.FromMilliseconds(_readTimeout)
             };
 
-            _traceSource.TraceData(TraceEventType.Verbose, 0, $"Connection set to {_client.BaseAddress} with timeout value {_client.Timeout}");
+            TraceSource.TraceData(TraceEventType.Verbose, 0, $"Connection set to {_client.BaseAddress} with timeout value {_client.Timeout}");
         }
 
         public void Disconnect()
         {
-            _traceSource.TraceData(TraceEventType.Verbose, 0, $"Disconnection");
+            TraceSource.TraceData(TraceEventType.Verbose, 0, $"Disconnection");
         }
 
         public void Dispose()
@@ -91,8 +91,8 @@ namespace EppLib.OpenProvider
                 bytes = stream.GetBuffer();
             }
 
-            _traceSource.TraceData(TraceEventType.Verbose, 0, $"Write: Payload size : {lenght}");
-            _traceSource.TraceData(TraceEventType.Verbose, 0, traceLog);
+            TraceSource.TraceData(TraceEventType.Verbose, 0, $"Write: Payload size : {lenght}");
+            TraceSource.TraceData(TraceEventType.Verbose, 0, traceLog);
 
             var post = _client.PostAsync(string.Empty, new StringContent(xmlDocument.OuterXml))
                 .ConfigureAwait(false)
@@ -117,7 +117,7 @@ namespace EppLib.OpenProvider
         /// <returns></returns>
         public byte[] Read()
         {
-            _traceSource.TraceData(TraceEventType.Verbose, 0, $"Read: {Beautify(_resultBuffer)}");
+            TraceSource.TraceData(TraceEventType.Verbose, 0, $"Read: {Beautify(_resultBuffer)}");
             var result = GetBytes(_resultBuffer);
             _resultBuffer = null;
             return result;
