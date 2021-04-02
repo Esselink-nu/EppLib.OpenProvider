@@ -31,9 +31,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EppLib">
-      <HintPath>..\..\..\EppLib.NET\EppLib\bin\Debug\EppLib.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,11 +43,19 @@
   <ItemGroup>
     <Compile Include="Constants.cs" />
     <Compile Include="DomainCreate\OpDomainCreate.cs" />
+    <Compile Include="DomainTransfer\OpDomainTransfer.cs" />
+    <Compile Include="DomainTransfer\OpProvDomainTransferEppExtension.cs" />
     <Compile Include="OpLogin.cs" />
     <Compile Include="DomainCreate\OpProvDomainCreateEppExtension.cs" />
     <Compile Include="OpProvEppExtension.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WebConnection.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\EppLib.NET\EppLib\EppLib.csproj">
+      <Project>{35183cb6-0af7-423c-a4c3-77e33f0f7746}</Project>
+      <Name>EppLib</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
