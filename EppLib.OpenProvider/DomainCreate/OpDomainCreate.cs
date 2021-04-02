@@ -39,7 +39,7 @@ namespace EppLib.OpenProvider
 
             if (NameServers != null && NameServers.Count > 0)
             {
-                domainCreate.AppendChild(CreateNameServerElement(doc, NameServers));
+                domainCreate.AppendChild(CreateNameServerElement(doc, NameServers, true));
             }
 
             if (RegistrantContactId != null)
