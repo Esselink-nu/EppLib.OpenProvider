@@ -37,7 +37,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EppLib">
-      <HintPath>..\..\..\EppLib.NET\EppLib\bin\Debug\EppLib.dll</HintPath>
+      <HintPath>..\..\EppLib.NET\EppLib\bin\Release\netstandard2.0\EppLib.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
